@@ -1,5 +1,6 @@
 package com.jpagesipan.account.controller;
 
+import com.jpagesipan.account.domain.Account;
 import com.jpagesipan.account.reository.AccountRepository;
 import org.assertj.core.api.BDDAssertions;
 import org.junit.jupiter.api.Assertions;
@@ -63,6 +64,9 @@ class AccountControllerTest {
                 .andExpect(status().is3xxRedirection())
                 .andExpect(view().name("redirect:/"));
 
+        Account account = accountRepository.findByEmail("email@email.com");
+        assertNull(account);
+        assertNotEquals(account.getPassword(),"12345678");
         assertTrue(accountRepository.existsByEmail("email@email.com"));
     }
 }
