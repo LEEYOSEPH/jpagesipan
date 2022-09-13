@@ -1,15 +1,24 @@
 Spring:
+  profiles:
+    active: local
+
   datasource:
     url: jdbc:mysql://localhost:3306/gesipan?serverTimezone=Asia/Seoul
     username: root
     password: Dldytpq!23
     driver-class-name: com.mysql.cj.jdbc.Driver
 
-  jpa:
-    hibernate:
-      ddl-auto: create
-    properties:
-      hibernate:
+#  jpa:
+#    hibernate:
+#      ddl-auto: create
+#    properties:
+#      hibernate:
 #       show_sql: true
-        format_sql: true
-        default_batch_fetch_size: 100
+#        format_sql: true
+#        default_batch_fetch_size: 100
+
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+#      org.hibernate.Type: trace
