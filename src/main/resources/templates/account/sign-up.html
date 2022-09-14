@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
   <meta charset="UTF-8">
   <title>JpaGe-Si-Pan</title>
@@ -86,6 +87,12 @@
             </small>
         </div>
       </form>
+      <footer th:fragment="footer">
+        <div class="row justify-content-center">
+            <img class="mb-2" src="/images/logo_long_kr.png" alt="" width="100">
+            <small class="d-block mb-3 text-muted">&copy; 2020</small>
+        </div>
+      </footer>
   </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
