@@ -39,6 +39,7 @@ class AccountControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(model().attributeExists("error"))
                 .andExpect(view().name("account/checked-email"));
+
     }
 
     @DisplayName("인증 메일 확인 - 입력값 정상")
