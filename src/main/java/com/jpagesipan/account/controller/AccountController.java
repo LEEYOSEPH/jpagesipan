@@ -75,4 +75,10 @@ public class AccountController {
         return view;
     }
 
+    @GetMapping("/check-email")
+    public String checkEmail(@CurrentAccount Account account, Model model) {
+        model.addAttribute("email", account.getEmail());
+        return "account/check-email";
+    }
+
 }
