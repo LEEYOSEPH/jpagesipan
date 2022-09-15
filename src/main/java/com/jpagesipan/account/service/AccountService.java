@@ -1,5 +1,6 @@
 package com.jpagesipan.account.service;
 
+import com.jpagesipan.account.controller.UserAccount;
 import com.jpagesipan.account.domain.Account;
 import com.jpagesipan.account.dto.SignUpForm;
 import com.jpagesipan.account.reository.AccountRepository;
@@ -60,7 +61,7 @@ public class AccountService {
     public void login(Account account) {
         /*정석적인 방법은 아니다. */
         UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
-                account.getNickname(),
+                new UserAccount(account),
                 account.getPassword(),
                 List.of(new SimpleGrantedAuthority("ROLE_USER")));
         SecurityContextHolder.getContext().setAuthentication(token);
