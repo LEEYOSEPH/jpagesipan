@@ -24,7 +24,15 @@ public class SecurityConfig {
                         "/email-login", "/check-email-login", "login-link").permitAll()
                 .mvcMatchers(HttpMethod.GET, "/profile/*").permitAll()
                 .anyRequest().authenticated()
+                .and()
+                .formLogin().loginPage("/login").permitAll()
+                .and()
+                .logout().logoutSuccessUrl("/")
+                //.and()
+                //.rememberMe().userDetailsService(accountService).tokenRepository(tokenRepository())
                 .and().build();
+
+
     }
 
     /**
